@@ -1,6 +1,6 @@
 import paramiko
 
-def mikrotik_reset_and_restore(hostname, username, password,name,pw,backup):
+def makeuser(hostname, username, password,name,pw,backup):
     ssh_client = paramiko.SSHClient()
     ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     
@@ -30,4 +30,4 @@ if __name__ == "__main__":
     backupfile = "yourbackupfile.backup"
 
     for hostname in router_hostnames:
-        mikrotik_reset_and_restore(hostname, router_username, router_password,yournewusername,yournewpassword,backupfile)
+        makeuser(hostname, router_username, router_password,yournewusername,yournewpassword,backupfile)
